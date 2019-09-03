@@ -13,19 +13,19 @@ Park.prototype.removeDino = function (dinosaur) {
   this.collectionOfDinsosaur.splice(pos, 1)
 };
 
-// Park.prototype.mostPopularDino = function () {
-//   function compare( a, b ) {
-//     if ( a.guestsAttractedPerDay < b.guestsAttractedPerDay ){
-//       return -1;
-//     }
-//     if ( a.guestsAttractedPerDay > b.guestsAttractedPerDay ){
-//       return 1;
-//     }
-//     return 0;
-//   }
-//   this.collectionOfDinsosaur.sort(compare);
-//   return this.collectionOfDinsosaur[0];
-// };
+Park.prototype.mostPopularDino = function () {
+  function compare( a, b ) {
+    if ( a.guestsAttractedPerDay < b.guestsAttractedPerDay ){
+      return -1;
+    }
+    if ( a.guestsAttractedPerDay > b.guestsAttractedPerDay ){
+      return 1;
+    }
+    return 0;
+  }
+  this.collectionOfDinsosaur.sort(compare);
+  return this.collectionOfDinsosaur[0];
+};
 
 Park.prototype.findSpecies = function (speciesName) {
   const foundDinos = [];
