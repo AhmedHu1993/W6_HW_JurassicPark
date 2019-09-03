@@ -14,16 +14,9 @@ Park.prototype.removeDino = function (dinosaur) {
 };
 
 Park.prototype.mostPopularDino = function () {
-  function compare( a, b ) {
-    if ( a.guestsAttractedPerDay < b.guestsAttractedPerDay ){
-      return -1;
-    }
-    if ( a.guestsAttractedPerDay > b.guestsAttractedPerDay ){
-      return 1;
-    }
-    return 0;
-  }
-  this.collectionOfDinsosaur.sort(compare);
+  this.collectionOfDinsosaur.sort(function (a, b) {
+    return b.guestsAttractedPerDay - a.guestsAttractedPerDay;
+  });
   return this.collectionOfDinsosaur[0];
 };
 
